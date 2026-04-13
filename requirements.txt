@@ -1,0 +1,17 @@
+# data processing
+numpy>=2.3
+pandas>=2.3
+
+# statistical modeling
+scipy>=1.17
+statsmodels>=0.14
+
+# machine learning
+scikit-learn>=1.7
+
+# visualization
+matplotlib>=3.10
+seaborn>=0.13
+
+# notebooks
+jupyterlab>=4.5
