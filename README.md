@@ -10,6 +10,7 @@ A synthetic dataset with the same schema and similar statistical properties is p
 
 ## Project structure
 
+```
 visual-acuity-predictor/  
 ├─ src/            # source code for data processing and model training  
 ├─ data/           # synthetic dataset used for demonstration  
@@ -17,6 +18,7 @@ visual-acuity-predictor/
 ├─ artifacts/      # trained models and other generated files  
 ├─ README.md  
 └─ requirements.txt  
+```
 
 
 ## Installation
