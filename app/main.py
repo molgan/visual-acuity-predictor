@@ -17,9 +17,9 @@ logging.basicConfig(level=logging.INFO)
 
 
 app = FastAPI(
-    title="Visual Acuity Prediction API",
+    title="Visual Acuity Estimation API",
     version="1.0.0",
-    description="Demo API for visual acuity prediction",
+    description="Demo API for estimating preoperative visual acuity",
     lifespan=lifespan,
 )
 

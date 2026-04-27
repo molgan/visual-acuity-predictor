@@ -70,11 +70,11 @@ def _postprocess_prediction(raw_prediction: float) -> tuple[float, list[str]]:
 
     if prediction > PLAUSIBLE_MAX:
         prediction = PLAUSIBLE_MAX
-        warnings.append(f"Raw prediction exceeded the plausible upper bound ({PLAUSIBLE_MAX}) and was clipped.")
+        warnings.append(f"Raw model output exceeded the plausible upper bound ({PLAUSIBLE_MAX}) and was clipped.")
 
     if prediction < PLAUSIBLE_MIN:
         prediction = PLAUSIBLE_MIN
-        warnings.append(f"Raw prediction was below the plausible lower bound ({PLAUSIBLE_MIN}) and was clipped.")
+        warnings.append(f"Raw model output was below the plausible lower bound ({PLAUSIBLE_MIN}) and was clipped.")
 
     return prediction, warnings
 
