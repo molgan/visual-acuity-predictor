@@ -1,0 +1,39 @@
+{
+    "Dummy_median": {
+        "pipeline_factory": "make_dummy_pipeline",
+        "params": {
+            "strategy": "median"
+        },
+        "features": "all"
+    },
+    "ENSelector_EN_alpha_0.35_l1_0.1": {
+        "pipeline_factory": "make_elasticnet_pipeline",
+        "params": {
+            "alpha": 0.35,
+            "l1_ratio": 0.1
+        },
+        "features": [
+            "Axial length (mm)",
+            "Рефрактометрія без циклоплегії Sphera",
+            "Рефрактометрія циклоплегія Sphera",
+            "Рефрактометрія циклоплегія Cylynder",
+            "A. C. Depth (mm)",
+            "Вік"
+        ]
+    },
+    "Stepwise_LR_log": {
+        "pipeline_factory": "make_log_target_pipeline(make_linear_pipeline)",
+        "params": {},
+        "features": [
+            "Рефрактометрія циклоплегія Sphera",
+            "Рефрактометрія циклоплегія Cylynder",
+            "Axial length (mm)",
+            "Вік",
+            "Кератометрія циклоплегії Cyl",
+            "Рефрактометрія без циклоплегії Sphera",
+            "Pupil diameter (mm)",
+            "Стать: 1 - ч, 2 - ж",
+            "Flat meridian K1 (D)"
+        ]
+    }
+}

@@ -1,6 +1,7 @@
 # data processing
 numpy>=2.3
 pandas>=2.3
+openpyxl>=3.1
 
 # statistical modeling
 scipy>=1.17
@@ -8,6 +9,7 @@ statsmodels>=0.14
 
 # machine learning
 scikit-learn>=1.7
+joblib>=1.5
 
 # visualization
 matplotlib>=3.10
@@ -15,6 +17,7 @@ seaborn>=0.13
 
 # notebooks
 jupyterlab>=4.5
+itables>=2.7
 
 # API
 fastapi>=0.136

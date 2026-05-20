@@ -9,7 +9,7 @@ from fastapi import FastAPI
 
 logger = logging.getLogger(__name__)
 
-MODEL_PATH = Path("artifacts/visual_acuity_linreg_real_v1.joblib")
+MODEL_PATH = Path("artifacts/final_models/ucva_stepwise_linear_log_v0.joblib")
 
 
 @dataclass
