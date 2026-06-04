@@ -1,9 +1,9 @@
 import pandas as pd
 from pathlib import Path
 
-from src.config import make_config, DEFAULT_DATASET_DATE
-from src.column_groups import get_patient_level_columns
-from src.columns import (
+from src.data.config import make_config, DEFAULT_DATASET_DATE
+from src.data.column_groups import get_patient_level_columns
+from src.data.columns import (
     PATIENT_COL,
     EXAM_COL,
     EYE_COL,

@@ -198,6 +198,8 @@ def evaluate_model_stability(
 
             "target_std_val": y_val.std(),
             "target_range_val": y_val.max() - y_val.min(),
+            "target_mean_val": y_val.mean(),
+            "target_median_val": y_val.median(),
 
             "n_selected_features": (
                 len(selected_features)

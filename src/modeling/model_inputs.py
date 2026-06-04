@@ -11,6 +11,7 @@ class ModelInputs:
     X: pd.DataFrame
     y: pd.Series
     groups: pd.Series | None
+    metadata: pd.DataFrame | None
 
     @property
     def feature_names(self) -> list[str]:
@@ -87,10 +88,19 @@ def prepare_model_inputs(
     if not feature_cols:
         raise ValueError("No feature columns remain after filtering.")
 
+    metadata_cols = [
+        col
+        for col in df.columns
+        if col not in feature_cols and col not in protected_cols
+    ]
+
+    metadata = df[metadata_cols] if metadata_cols else None
+
     return ModelInputs(
         X=df[feature_cols],
         y=df[target_col],
         groups=df[group_col],
+        metadata=metadata,
     )
 
 
@@ -98,6 +108,7 @@ def prepare_train_test_model_inputs(
     df: pd.DataFrame,
     target_col: str,
     group_col: str,
+    exclude_feature_cols: Sequence[str] | None = None,
     test_size: float = 0.2,
     random_state: int = 42,
 ) -> TrainTestModelInputs:
@@ -112,12 +123,14 @@ def prepare_train_test_model_inputs(
         df=df_train,
         target_col=target_col,
         group_col=group_col,
+        exclude_feature_cols=exclude_feature_cols,
     )
 
     inputs_test = prepare_model_inputs(
         df=df_test,
         target_col=target_col,
         group_col=group_col,
+        exclude_feature_cols=exclude_feature_cols,
         include_feature_cols=inputs_train.feature_names,
     )
 

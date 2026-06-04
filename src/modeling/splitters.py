@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import GroupShuffleSplit
+from sklearn.model_selection import GroupShuffleSplit, train_test_split
 
 
 def make_group_train_test_split(
@@ -19,7 +19,7 @@ def make_group_train_test_split(
     train_idx, test_idx = next(
         splitter.split(df, groups=df[group_col])
     )
-
+    
     train_df = df.iloc[train_idx].copy()
     test_df = df.iloc[test_idx].copy()
 

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.columns import (
+from src.data.columns import (
     OPHTH_START,
     OPHTH_END,
     PSYCH_START,

@@ -3,8 +3,8 @@ import numpy as np
 import re
 from pathlib import Path
 
-from src.config import make_config, DEFAULT_DATASET_DATE
-from src.columns import (
+from src.data.config import make_config, DEFAULT_DATASET_DATE
+from src.data.columns import (
     PATIENT_COL,
     EXAM_COL,
     EYE_COL,
@@ -21,7 +21,7 @@ from src.columns import (
     ALLOWED_DIAGNOSIS,
     ALLOWED_NOSOGENY,
 )
-from src.column_groups import (
+from src.data.column_groups import (
     get_ophthalmology_columns,
     get_numeric_columns,
     get_patient_level_columns,

@@ -3,15 +3,15 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.config import make_config, DEFAULT_DATASET_DATE
-from src.columns import PATIENT_COL, EYE_COL, EXAM_COL, BINARY_MAPPINGS
-from src.column_groups import (
+from src.data.config import make_config, DEFAULT_DATASET_DATE
+from src.data.columns import PATIENT_COL, EYE_COL, EXAM_COL, DIAGNOSIS_COL, BINARY_MAPPINGS
+from src.data.column_groups import (
     get_ophthalmology_columns,
     get_ophthalmology_map_columns,
     get_psychology_columns,
     get_demographic_columns,
 )
-from src.ml_dataset_specs import (
+from src.data.ml_dataset_specs import (
     SPECS,
     MLDatasetSpec,
     get_excluded_features_for_target,
@@ -33,7 +33,7 @@ def get_feature_columns(df: pd.DataFrame, spec: MLDatasetSpec) -> list[str]:
     ]
 
     if spec.feature_set == "ophthalmology_without_maps":
-        feature_cols = demographic_cols + ophth_without_maps
+        feature_cols = demographic_cols + [DIAGNOSIS_COL] + ophth_without_maps
 
     elif spec.feature_set == "ophthalmology_with_maps":
         feature_cols = demographic_cols + ophth_without_maps + map_cols
